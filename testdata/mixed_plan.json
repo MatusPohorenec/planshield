@@ -1,0 +1,119 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.7.4",
+  "resource_changes": [
+    {
+      "address": "aws_instance.web",
+      "mode": "managed",
+      "type": "aws_instance",
+      "name": "web",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {
+          "ami": "ami-0abcdef1234567890",
+          "instance_type": "t3.micro",
+          "tags": {"Name": "web-server"}
+        },
+        "after_unknown": {"id": true, "arn": true},
+        "before_sensitive": false,
+        "after_sensitive": {"tags": {}}
+      }
+    },
+    {
+      "address": "aws_s3_bucket.data",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "data",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {
+          "bucket": "my-data-bucket"
+        },
+        "after_unknown": {"id": true, "arn": true},
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_security_group.allow_tls",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "allow_tls",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["update"],
+        "before": {
+          "ingress": []
+        },
+        "after": {
+          "ingress": [{"from_port": 443, "to_port": 443}]
+        },
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_db_instance.main",
+      "mode": "managed",
+      "type": "aws_db_instance",
+      "name": "main",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["delete", "create"],
+        "before": {
+          "engine": "mysql",
+          "password": "supersecret123"
+        },
+        "after": {
+          "engine": "postgres",
+          "password": "newsecret456"
+        },
+        "before_sensitive": {"password": true},
+        "after_sensitive": {"password": true}
+      }
+    },
+    {
+      "address": "aws_iam_role.old_role",
+      "mode": "managed",
+      "type": "aws_iam_role",
+      "name": "old_role",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["delete"],
+        "before": {
+          "name": "old-role"
+        },
+        "after": null,
+        "before_sensitive": {},
+        "after_sensitive": false
+      }
+    },
+    {
+      "address": "data.aws_ami.latest",
+      "mode": "data",
+      "type": "aws_ami",
+      "name": "latest",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["no-op"],
+        "before": {"id": "ami-existing"},
+        "after": {"id": "ami-existing"},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    }
+  ],
+  "output_changes": {
+    "db_connection_string": {
+      "actions": ["create"],
+      "before": null,
+      "after": "postgres://admin:newsecret456@db.example.com:5432/app",
+      "before_sensitive": false,
+      "after_sensitive": true
+    }
+  }
+}
