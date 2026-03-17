@@ -1,7 +1,7 @@
 package redact
 
 import (
-	"github.com/planshield/planshield/internal/plan"
+	"github.com/MatusPohorenec/planshield/internal/plan"
 )
 
 // RedactPlan scrubs sensitive values from all resource changes and output

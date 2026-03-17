@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"io"
 
-	"github.com/planshield/planshield/internal/plan"
+	"github.com/MatusPohorenec/planshield/internal/plan"
 )
 
 // jsonOutput is the structured JSON output format.

@@ -5,7 +5,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/planshield/planshield/internal/plan"
+	"github.com/MatusPohorenec/planshield/internal/plan"
 )
 
 // actionEmoji maps actions to visual indicators for Markdown output.

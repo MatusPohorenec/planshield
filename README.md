@@ -15,13 +15,13 @@ PlanShield parses Terraform plan output (JSON or binary) and produces a clean, d
 ## Installation
 
 ```bash
-go install github.com/planshield/planshield/cmd/planshield@latest
+go install github.com/MatusPohorenec/planshield/cmd/planshield@latest
 ```
 
 Or build from source:
 
 ```bash
-git clone https://github.com/planshield/planshield.git
+git clone https://github.com/MatusPohorenec/planshield.git
 cd planshield
 go build -o planshield ./cmd/planshield
 ```

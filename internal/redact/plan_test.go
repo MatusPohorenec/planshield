@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/planshield/planshield/internal/plan"
+	"github.com/MatusPohorenec/planshield/internal/plan"
 )
 
 func TestRedactPlanScrubsSensitiveValues(t *testing.T) {

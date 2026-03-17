@@ -8,10 +8,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/planshield/planshield/internal/plan"
-	"github.com/planshield/planshield/internal/redact"
-	"github.com/planshield/planshield/internal/render"
-	"github.com/planshield/planshield/internal/runner"
+	"github.com/MatusPohorenec/planshield/internal/plan"
+	"github.com/MatusPohorenec/planshield/internal/redact"
+	"github.com/MatusPohorenec/planshield/internal/render"
+	"github.com/MatusPohorenec/planshield/internal/runner"
 )
 
 // Exit codes for CI integration.

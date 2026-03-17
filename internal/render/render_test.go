@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/planshield/planshield/internal/plan"
+	"github.com/MatusPohorenec/planshield/internal/plan"
 )
 
 func testSummary() *plan.Summary {
